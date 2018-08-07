@@ -47,7 +47,10 @@ def delete_all_articles():
 delete_all_articles()
 print(query_all_articles())
 
-"""
-def edit_article_rating():
-	pass
-"""
+
+def edit_article_rating(rating_of_article,article_title):
+	jon = session.query(Knowledge).filter_by(rating_of_article=rating_of_article,article_title=article_title).all()
+	return jon
+	session.commit()
+edit_article_rating(10,"IASA")
+print(query_all_articles())
